@@ -58,7 +58,7 @@ class RPNTests(unittest.TestCase):
         calculator = RPNCalculator(operators)
         expression = "1000000 1000000 *"
         result = calculator.calculate(expression)
-        self.assertEqual(1000000000000, result)  # Asserting against the expected large result
+        self.assertEqual(1000000000000, result)
 
     def test_division_by_zero(self):
         operators = OperatorMap.create_operators()

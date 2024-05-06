@@ -77,31 +77,31 @@ class RPNTests(unittest.TestCase):
 
     def test_large_numbers(self):
         multiply_operation = MagicMock()
-        multiply_operation.operacja.return_value = 1000000000000  # Set the expected result for multiplication
+        multiply_operation.operacja.return_value = 1000000000000
         operator_map = MagicMock()
         operator_map.create_operators.return_value = {'*': multiply_operation}
         calculator = RPNCalculator(operator_map.create_operators())
         expression = "1000000 1000000 *"
         result = calculator.calculate(expression)
-        self.assertEqual(1000000000000, result)  # Asserting against the expected large result
+        self.assertEqual(1000000000000, result)
 
     def test_small_numbers(self):
-        # Mock the division operation to return the expected result
+
         divide_operation = MagicMock()
         divide_operation.operacja.side_effect = lambda x, y: x / y
         operator_map = MagicMock()
         operator_map.create_operators.return_value = {'/': divide_operation}
 
         calculator = RPNCalculator(operator_map.create_operators())
-        expression = "1 1000000000000 /"  # 1 divided by a large number
+        expression = "1 1000000000000 /"
         result = calculator.calculate(expression)
-        self.assertAlmostEqual(0.000000000001, result)  # Expecting a very small value
+        self.assertAlmostEqual(0.000000000001, result)
 
     def test_invalid_expression(self):
         operator_map = MagicMock()
         operator_map.create_operators.return_value = {'+': MagicMock()}
         calculator = RPNCalculator(operator_map.create_operators())
-        expression = "5 + 2"  # Invalid expression with operator without operands
+        expression = "5 + 2"
         with self.assertRaises(ValueError):
             calculator.calculate(expression)
 
