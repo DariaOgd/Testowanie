@@ -57,7 +57,7 @@ class RPNCalculator:
         return stack.pop()
 
 
-# Example usage:
+
 if __name__ == "__main__":
     operators = OperatorMap.create_operators()
     calculator = RPNCalculator(operators)
