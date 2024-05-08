@@ -1,3 +1,4 @@
+Przygotowanie : Daria Ogdowska, Matylda Głazik
 Kalkulator w Notacji Polskiej Odwrotnej (RPN)
 
 Kalkulator w Notacji Polskiej Odwrotnej (RPN) to prosty narzędzie wiersza poleceń do obliczania wyrażeń arytmetycznych zapisanych w Notacji Polskiej Odwrotnej.
